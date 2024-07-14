@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,8 +8,8 @@ public class PlayerMovement : MonoBehaviour
 
     //character controls
     public CharacterController _controller;
-    //public CinemachineVirtualCamera _vCCamera;
-    private float _speed = 10f;
+    public CinemachineVirtualCamera _vCCamera;
+    private float _speed = 4f;
     public float _gravity = -9.81f;
     public float _x;
     public float _z;
@@ -36,6 +37,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         Movment();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            _vCCamera.enabled = true;
+        }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();
