@@ -25,6 +25,10 @@ public class PlayerMovement : MonoBehaviour
     private bool _isGrounded;
     public GameObject _cineCamera;
 
+    //Open Menu
+    [SerializeField]
+    private GameObject _menu;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +59,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            Application.Quit();
+            _vCCamera.enabled = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            _menu.SetActive(true);
         }
     }
 
