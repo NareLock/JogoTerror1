@@ -24,6 +24,7 @@ public class GameUIManager : MonoBehaviour
         {
             _mouseSenseText.text = "Mause sensetivity: " + v.ToString("0.00");
             _playerVCamera.GetCinemachineComponent<CinemachinePOV>().m_HorizontalAxis.m_MaxSpeed = v * 50;
+            _playerVCamera.GetCinemachineComponent<CinemachinePOV>().m_VerticalAxis.m_MaxSpeed = v * 50;
         });
         _fOVSlider.onValueChanged.AddListener((v) =>
         {
