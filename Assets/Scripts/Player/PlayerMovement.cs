@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public float _z;
     public float x;
     public float z;
+    public bool _canMove = true;
 
 
     //gravity
@@ -66,6 +67,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Movment()
     {
+        if (!_canMove)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             _speed = 8;

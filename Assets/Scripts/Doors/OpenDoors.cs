@@ -6,6 +6,8 @@ public class OpenDoors : MonoBehaviour
 {
 
     [SerializeField]
+    private Animator _doorAnim;
+    [SerializeField]
     private GameObject _door1, _door2;
     [SerializeField]
     private float _currentDoorRotation, _target;
@@ -19,14 +21,15 @@ public class OpenDoors : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            _doorAnim.SetBool("OpenClose", !_doorAnim.GetBool("OpenClose"));
         }
     }
 
     private void Update()
     {
 
-        _currentDoorRotation = Mathf.MoveTowards(_currentDoorRotation, _target, _speedCurve.Evaluate(_rotationSpeed * Time.deltaTime));
-        _door1.transform.localEulerAngles = new Vector3(-89.617f, _currentDoorRotation, 0);
+        //_currentDoorRotation = Mathf.MoveTowards(_currentDoorRotation, _target, _speedCurve.Evaluate(_rotationSpeed * Time.deltaTime));
+        //_door1.transform.localEulerAngles = new Vector3(-89.617f, _currentDoorRotation, 0);
 
         //_door1.transform.rotation = Quaternion.Lerp(Quaternion.Euler(_initial1), Quaternion.Euler(_final1), _currentDoorRotation); 
     }
