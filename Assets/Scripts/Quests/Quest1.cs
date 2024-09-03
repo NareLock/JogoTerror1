@@ -24,6 +24,7 @@ public class Quest1 : MonoBehaviour
             _questUI.SetActive(true);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            gameObject.SetActive(false);
         }
         if (other.CompareTag("Player") && _stage == 0)
         {

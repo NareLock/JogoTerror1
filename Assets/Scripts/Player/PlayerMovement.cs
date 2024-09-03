@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform _groundCheck;
     public float _groundDistance = 0.4f;
     public LayerMask _groundMask;
+    [SerializeField]
     private bool _isGrounded;
     public GameObject _cineCamera;
 
