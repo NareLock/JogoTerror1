@@ -17,6 +17,7 @@ public class OpenDoors : MonoBehaviour
     private Vector3 _initial1, _initial2, _final1, _final2;
     [SerializeField]
     private AnimationCurve _speedCurve;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
