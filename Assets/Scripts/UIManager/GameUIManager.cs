@@ -46,4 +46,9 @@ public class GameUIManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
