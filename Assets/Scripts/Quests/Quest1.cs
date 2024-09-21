@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Quest1 : MonoBehaviour
+public class Quest1 : MonoBehaviour, IInteractable
 {
     [SerializeField]
     private Rigidbody _questGiverRB;
@@ -18,20 +16,21 @@ public class Quest1 : MonoBehaviour
     private GameObject _questUI;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && _stage == 1)
-        {
-            _cubRenderer.enabled = false;
-            _questUI.SetActive(true);
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            gameObject.SetActive(false);
-        }
-        if (other.CompareTag("Player") && _stage == 0)
+        if (other.CompareTag("Player"))
         {
             _questGiverRB.useGravity = true;
             _fireLight.enabled = false;
-            _collider.center = new Vector3(0, 0, 0);
-            _stage++;
+            _collider.enabled = false;
         }
+    }
+
+    public void Interact()
+    {
+        GameManager.Instance.LockUnlockCursor();
+        _cubRenderer.enabled = false;
+        _questUI.SetActive(true);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        gameObject.SetActive(false);
     }
 }

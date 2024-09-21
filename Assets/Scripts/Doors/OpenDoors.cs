@@ -11,7 +11,6 @@ public class OpenDoors : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Opening Door");
         _doorAnim.SetBool("OpenClose", !_doorAnim.GetBool("OpenClose"));
     }
 }
