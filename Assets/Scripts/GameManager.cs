@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    private bool _cursorLockState = false;
+    private bool _cursorLockState = true;
     [SerializeField]
     private CinemachineVirtualCamera _vCam;
     [SerializeField]
